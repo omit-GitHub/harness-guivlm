@@ -40,6 +40,12 @@ from .verifier import VerificationResult, VerificationStatus
 # ─────────────── Protocols ───────────────
 
 @runtime_checkable
+class Clock(Protocol):
+    """时钟协议。支持注入 fake clock 用于测试。"""
+    def time(self) -> float: ...
+
+
+@runtime_checkable
 class DecisionSource(Protocol):
     """动作决策源。VLM 只是实现之一。"""
     def next_action(self, state: UiState) -> ActionSpec: ...
@@ -130,6 +136,8 @@ def run_action_loop(
     recovery_planner: Optional[RecoveryPlanner] = None,
     target_role: Optional[str] = None,
     expected_ocr_tokens: Optional[set] = None,
+    clock: Optional[Clock] = None,
+    deadline_ms: Optional[float] = None,
 ) -> ActionLoopResult:
     """Harness 受限恢复闭环。
 
@@ -137,13 +145,19 @@ def run_action_loop(
       - decision_calls：DecisionSource.next_action() 次数
       - atomic_action_count：所有 executor.execute() 次数
       - recovery_count：进入 RecoveryPlan 次数
+
+    可选 deadline 约束：
+      - clock: 可注入时钟，默认使用 time.time
+      - deadline_ms: 截止时间（毫秒），超时返回 timeout
     """
     config = config or ActionGuardConfig()
     guard = guard or ActionGuard()
     recovery_planner = recovery_planner or DefaultRecoveryPlanner()
+    clock = clock or time  # 使用系统时间
     current_state = initial_state
     steps: list = []
     trace: list = []
+    start_time = clock.time() * 1000 if deadline_ms else None  # 转换为毫秒
     last_verification: Optional[VerificationResult] = None
     recovery_count = 0
     decision_calls = 0
@@ -362,6 +376,13 @@ def run_action_loop(
 
     # ── 主决策循环 ──
     while True:
+        # Deadline 检查
+        if deadline_ms is not None:
+            elapsed_ms = (clock.time() * 1000) - start_time
+            if elapsed_ms >= deadline_ms:
+                return _return(False, "timeout",
+                               f"deadline {deadline_ms}ms exceeded (elapsed: {elapsed_ms:.2f}ms)")
+
         # 决策预算检查
         if decision_calls >= max_decision_calls:
             return _return(False, "decision_budget_exhausted",
