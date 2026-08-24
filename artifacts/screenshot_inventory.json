@@ -1,0 +1,1710 @@
+{
+  "screenshot_dir": "screenshots",
+  "total_images": 103,
+  "total_png": 103,
+  "naming_pattern": "screen_YYYYMMDD_HHMMSS_NNN.png",
+  "date_range": [
+    "20260819",
+    "20260820"
+  ],
+  "resolution_distribution": {
+    "1280x800": 103
+  },
+  "mid_screen_reference": "1280x800",
+  "non_mid_screen_count": 0,
+  "non_mid_screen": [],
+  "corrupted_count": 0,
+  "corrupted": [],
+  "duplicate_groups_count": 0,
+  "duplicate_groups": {},
+  "red_box_heuristic_count": 15,
+  "red_box_heuristic_images": [
+    "screen_20260819_165417_000.png",
+    "screen_20260819_170054_010.png",
+    "screen_20260819_171022_014.png",
+    "screen_20260819_171414_027.png",
+    "screen_20260819_171501_030.png",
+    "screen_20260819_171521_031.png",
+    "screen_20260819_171615_034.png",
+    "screen_20260819_171834_040.png",
+    "screen_20260819_172138_048.png",
+    "screen_20260819_172221_050.png",
+    "screen_20260820_103257_061.png",
+    "screen_20260820_151244_073.png",
+    "screen_20260820_151433_083.png",
+    "screen_20260820_151440_084.png",
+    "screen_20260820_152208_099.png"
+  ],
+  "red_box_heuristic_note": "像素级启发式（实心红色矩形），无法区分红框标注与红色 UI 元素，未验证",
+  "page_type_distribution": {
+    "grid": 70,
+    "search": 6,
+    "player": 10,
+    "detail": 2,
+    "list": 10,
+    "overlay": 5
+  },
+  "control_bar_visible_distribution": {
+    "unknown": 92,
+    "visible": 9,
+    "hidden": 2
+  },
+  "tags_distribution": {
+    "light_theme": 4,
+    "dark_theme": 21,
+    "pure_icon": 55,
+    "none": 3,
+    "small_icon": 15,
+    "ad": 5
+  },
+  "images": [
+    {
+      "filename": "screen_20260819_165417_000.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "3870f9fe9e90c95c",
+      "timestamp": "20260819_165417",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "light_theme"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165634_001.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "86bf5b58bd3ea883",
+      "timestamp": "20260819_165634",
+      "date": "20260819",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165655_002.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "935a5ca5714ab908",
+      "timestamp": "20260819_165655",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165732_003.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "6f3983691168854f",
+      "timestamp": "20260819_165732",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "visible",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165843_004.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "2a423eb6f57b6d52",
+      "timestamp": "20260819_165843",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "hidden",
+      "tags": [
+        "none"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165901_005.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "32148cfcc0519071",
+      "timestamp": "20260819_165901",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "visible",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165920_006.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "43fb98500b42729c",
+      "timestamp": "20260819_165920",
+      "date": "20260819",
+      "page_type": "detail",
+      "control_bar_visible": "visible",
+      "tags": [
+        "none"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_165940_007.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "b8a162264f4bc5a7",
+      "timestamp": "20260819_165940",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "visible",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_170007_008.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "9ee989e78cb40553",
+      "timestamp": "20260819_170007",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "visible",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_170037_009.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a65bda5beafc9673",
+      "timestamp": "20260819_170037",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_170054_010.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "3722f549a180bd7f",
+      "timestamp": "20260819_170054",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_170844_011.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "f7d7a62eb364245c",
+      "timestamp": "20260819_170844",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "visible",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_170910_012.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "eee9aecc4cbb23a1",
+      "timestamp": "20260819_170910",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "hidden",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171003_013.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a15ea52731bba343",
+      "timestamp": "20260819_171003",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171022_014.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "3d343553c943ac04",
+      "timestamp": "20260819_171022",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "visible",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171040_015.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0e7a8cfeea759951",
+      "timestamp": "20260819_171040",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "visible",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171111_016.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a6990138093e529f",
+      "timestamp": "20260819_171111",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "visible",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171128_017.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "9388bbc8655e4140",
+      "timestamp": "20260819_171128",
+      "date": "20260819",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171147_018.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "b426b18f324806a5",
+      "timestamp": "20260819_171147",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171203_019.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "dadde3885c65490b",
+      "timestamp": "20260819_171203",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171217_020.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "f8fe3665e051e911",
+      "timestamp": "20260819_171217",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171230_021.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "ea028ec82f6d4a70",
+      "timestamp": "20260819_171230",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171247_022.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "c63bf2132a67dc46",
+      "timestamp": "20260819_171247",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171258_023.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "01a9511287ecb620",
+      "timestamp": "20260819_171258",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171331_024.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "ffe87a694c354d56",
+      "timestamp": "20260819_171331",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171344_025.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1c6076c6e74dea6e",
+      "timestamp": "20260819_171344",
+      "date": "20260819",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171355_026.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "75ff0c8883512529",
+      "timestamp": "20260819_171355",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "light_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171414_027.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "e5433dc28a6145c3",
+      "timestamp": "20260819_171414",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171429_028.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "fbf61435595dc7b0",
+      "timestamp": "20260819_171429",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "light_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171442_029.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "332791fd536173e4",
+      "timestamp": "20260819_171442",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "light_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171501_030.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1a1b5c4ca278b95c",
+      "timestamp": "20260819_171501",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171521_031.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "3dc0af8b46c7982c",
+      "timestamp": "20260819_171521",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171533_032.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a3b8418d46817faf",
+      "timestamp": "20260819_171533",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171553_033.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "099ff929362e57df",
+      "timestamp": "20260819_171553",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171615_034.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "28274f43c05484ec",
+      "timestamp": "20260819_171615",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171635_035.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "faaf32fdd9a967cd",
+      "timestamp": "20260819_171635",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171720_036.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "f06a2072682f0974",
+      "timestamp": "20260819_171720",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171736_037.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "06b3e4b25c7bf87a",
+      "timestamp": "20260819_171736",
+      "date": "20260819",
+      "page_type": "player",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171805_038.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0f90dee173f44550",
+      "timestamp": "20260819_171805",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171819_039.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "634dfb14cdf47828",
+      "timestamp": "20260819_171819",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171834_040.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "ed6d20cc303bd739",
+      "timestamp": "20260819_171834",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171855_041.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "842009e48bd48330",
+      "timestamp": "20260819_171855",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_171950_042.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "f807c118f74fa5e6",
+      "timestamp": "20260819_171950",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172013_043.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "d7538049ffd624d9",
+      "timestamp": "20260819_172013",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172029_044.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1ce6525f294da3a6",
+      "timestamp": "20260819_172029",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172049_045.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a2eb93d69f14637c",
+      "timestamp": "20260819_172049",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172100_046.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "efba67258dcdcccb",
+      "timestamp": "20260819_172100",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172126_047.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "af3bf56130f33a84",
+      "timestamp": "20260819_172126",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172138_048.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "21d06a0c40bb21f9",
+      "timestamp": "20260819_172138",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172156_049.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "6b839948b8e7a598",
+      "timestamp": "20260819_172156",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172221_050.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "60e9f4e3b909a119",
+      "timestamp": "20260819_172221",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172244_051.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "687ee2429352bba3",
+      "timestamp": "20260819_172244",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172258_052.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "68f2809f1ee5b74f",
+      "timestamp": "20260819_172258",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172313_053.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "c975695290f476ef",
+      "timestamp": "20260819_172313",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172423_054.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "248b2eb2d3bd113d",
+      "timestamp": "20260819_172423",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172437_055.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0c71a5f979a83f02",
+      "timestamp": "20260819_172437",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172446_056.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1da7b22c0021500d",
+      "timestamp": "20260819_172446",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172504_057.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "aa77027901521ae7",
+      "timestamp": "20260819_172504",
+      "date": "20260819",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172525_058.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "c9a4c1b4e3749e29",
+      "timestamp": "20260819_172525",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172553_059.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0c387e49da345bdd",
+      "timestamp": "20260819_172553",
+      "date": "20260819",
+      "page_type": "overlay",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "ad"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260819_172614_060.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a1c1ed3c8b57e7c4",
+      "timestamp": "20260819_172614",
+      "date": "20260819",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_103257_061.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "6142d7f15488d930",
+      "timestamp": "20260820_103257",
+      "date": "20260820",
+      "page_type": "overlay",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "ad"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_103315_062.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0a0c3262112dfdc4",
+      "timestamp": "20260820_103315",
+      "date": "20260820",
+      "page_type": "detail",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "none"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_150603_063.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1784dc3b35fd5931",
+      "timestamp": "20260820_150603",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151051_064.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "90320884b29a6c31",
+      "timestamp": "20260820_151051",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151110_065.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "13521d469e81b845",
+      "timestamp": "20260820_151110",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151127_066.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1a724f65d7b7c25a",
+      "timestamp": "20260820_151127",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151139_067.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "edebd20c7456e5b0",
+      "timestamp": "20260820_151139",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151152_068.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0b6bcf4eccc1971d",
+      "timestamp": "20260820_151152",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151207_069.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "fe3ca65c17792c43",
+      "timestamp": "20260820_151207",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151216_070.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "643a687c8ec08a53",
+      "timestamp": "20260820_151216",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151223_071.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0daff6b4eb3fbdc4",
+      "timestamp": "20260820_151223",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151234_072.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "727eab99f8927b95",
+      "timestamp": "20260820_151234",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151244_073.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "e102c2b80129a5e5",
+      "timestamp": "20260820_151244",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151255_074.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "960a9874d929ab78",
+      "timestamp": "20260820_151255",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "dark_theme"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151306_075.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "e5dcc5868ec6878e",
+      "timestamp": "20260820_151306",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151316_076.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a397205773f7a060",
+      "timestamp": "20260820_151316",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151326_077.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "9ea9becc4c91026f",
+      "timestamp": "20260820_151326",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151343_078.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "30ed390f2ada25f8",
+      "timestamp": "20260820_151343",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151353_079.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "b12929456ee0a411",
+      "timestamp": "20260820_151353",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151405_080.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "0750c3eaa35a1dff",
+      "timestamp": "20260820_151405",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151414_081.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "544947de7e6122c4",
+      "timestamp": "20260820_151414",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151422_082.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "fd46dbae58e23b08",
+      "timestamp": "20260820_151422",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151433_083.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "f48153432584642f",
+      "timestamp": "20260820_151433",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151440_084.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "715bd3f17cee738e",
+      "timestamp": "20260820_151440",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151457_085.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "ce6be05043497f16",
+      "timestamp": "20260820_151457",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151508_086.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "428a16ef5183c690",
+      "timestamp": "20260820_151508",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151518_087.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "2af0c5677c2d7652",
+      "timestamp": "20260820_151518",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151627_088.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "4ba515b3237cf0f5",
+      "timestamp": "20260820_151627",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151638_089.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "92a400617b41f4d6",
+      "timestamp": "20260820_151638",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "ad"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151702_090.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "22d36059d4ff076a",
+      "timestamp": "20260820_151702",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151715_091.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "67fb83c8f15b9e10",
+      "timestamp": "20260820_151715",
+      "date": "20260820",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151725_092.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "cac0d2a69b25cec3",
+      "timestamp": "20260820_151725",
+      "date": "20260820",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_151745_093.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "768af58caadae8f1",
+      "timestamp": "20260820_151745",
+      "date": "20260820",
+      "page_type": "overlay",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "ad"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152019_094.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a0b7e89e3dfddf19",
+      "timestamp": "20260820_152019",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152037_095.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "7ec4438f682a362c",
+      "timestamp": "20260820_152037",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152047_096.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "64acf14d777c4a16",
+      "timestamp": "20260820_152047",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152117_097.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "41e2fd54bd7ed167",
+      "timestamp": "20260820_152117",
+      "date": "20260820",
+      "page_type": "grid",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152134_098.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "6e2ad7e17a4e6de9",
+      "timestamp": "20260820_152134",
+      "date": "20260820",
+      "page_type": "search",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152208_099.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "a4507f8a3163e503",
+      "timestamp": "20260820_152208",
+      "date": "20260820",
+      "page_type": "overlay",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "ad"
+      ],
+      "red_box_heuristic": true,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152222_100.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "6bc54e787b4eeb6f",
+      "timestamp": "20260820_152222",
+      "date": "20260820",
+      "page_type": "overlay",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152241_101.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "3ca2081a2d7bb5f2",
+      "timestamp": "20260820_152241",
+      "date": "20260820",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "pure_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    },
+    {
+      "filename": "screen_20260820_152301_102.png",
+      "width": 1280,
+      "height": 800,
+      "resolution": "1280x800",
+      "sha256": "1fffc057f3d2082d",
+      "timestamp": "20260820_152301",
+      "date": "20260820",
+      "page_type": "list",
+      "control_bar_visible": "unknown",
+      "tags": [
+        "small_icon"
+      ],
+      "red_box_heuristic": false,
+      "decode_error": null
+    }
+  ]
+}

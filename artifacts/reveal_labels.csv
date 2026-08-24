@@ -1,0 +1,2 @@
+trace_id,case_id,category,app_profile,device_model,android_version,screen_size,orientation,before_screenshot,after_screenshot,expected_target_state,human_ground_truth,before_control_bar_visible,after_control_bar_visible,notes
+reveal_0000_ae5cdf62,reveal_00,reveal,tencent_v1,AZ102u-10,9,"[1280, 800]",landscape,,,{},,,,

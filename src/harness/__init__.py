@@ -37,7 +37,9 @@ from .control_revealer import (
     RevealStrategyManager,
     RevealStrategyRecord,
 )
-from .timing import PhaseTimings, TimingStats, TimingTracker
+from .timing import (
+    Clock, FakeClock, PhaseTimings, RealClock, TimingStats, TimingTracker,
+)
 from .action_loop import (
     run_action_loop,
     DecisionSource,
@@ -83,6 +85,9 @@ __all__ = [
     "TimingTracker",
     "PhaseTimings",
     "TimingStats",
+    "Clock",
+    "RealClock",
+    "FakeClock",
     # action_loop
     "run_action_loop",
     "DecisionSource",

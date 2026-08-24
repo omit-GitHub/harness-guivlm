@@ -38,8 +38,8 @@ class BenchmarkScenario:
     expected_outcome: str  # success / blocked / failed / timeout / needs_refinement / etc.
 
     # 可选配置
-    executor_behavior: Optional[Callable] = None  # Mock Executor 的行为
-    verifier_behavior: Optional[Callable] = None  # Mock Verifier 的行为
+    executor_behavior: Optional[Callable] = None  # 已废弃：改用 executor_results
+    verifier_behavior: Optional[Callable] = None  # 已废弃：改用 verifier_results
     timing_config: Optional[ScenarioTimingConfig] = None
     control_revealer_config: Optional[dict] = None  # ControlRevealer 配置
     recovery_planner_config: Optional[dict] = None  # RecoveryPlanner 配置
@@ -48,6 +48,14 @@ class BenchmarkScenario:
     recovery_budget: int = 2
     deadline_ms: int = 20000
 
+    # 显式行为定义（P0：场景必须显式提供，禁止默认 success）
+    executor_results: list = None       # 每次 executor.execute 的结果序列
+    verifier_results: list = None       # 每次 verifier.verify 的四态结果序列
+    recovery_plan: list = None          # RecoveryPlanner 返回的动作序列
+    reveal_strategy: Optional[dict] = None  # 要注册的 RevealStrategyRecord 配置
+    guard_seed_failures: list = None    # 预置 failed_candidates：[(fingerprint, candidate_id), ...]
+    guard_config: Optional[dict] = None  # 覆盖 ActionGuardConfig 的字段（如 allow_tap_visual_fallback）
+
     # 预期结果细节
     expected_executor_calls: int = 0
     expected_failure_reason: Optional[str] = None
@@ -55,9 +63,18 @@ class BenchmarkScenario:
     expected_atomic_action_count: Optional[int] = None
     expected_recovery_count: Optional[int] = None
 
+    # 逐条断言（P0）
+    expected_error_code: Optional[str] = None          # Guard 拒绝的 error_code
+    expected_requires_refinement: Optional[bool] = None  # requires_refinement 标志
+    expected_reveal_strategy_state: Optional[str] = None  # 运行后策略状态
+    expected_strategy_id: Optional[str] = None          # reveal plan 的 strategy_id
+
     # 恢复与 reveal 标记
     recoverable: bool = False  # 是否为可恢复场景
     reveal_scenario: bool = False  # 是否为 reveal 场景
+
+    # 安全对照分类（P0）：must_reject / must_refine / allowed_control / ""
+    safety_class: str = ""
 
     # 对照实验标记
     baseline_should_execute: bool = False  # baseline 模式下是否应该执行错误动作

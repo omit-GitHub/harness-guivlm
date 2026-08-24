@@ -138,6 +138,28 @@ class TestRevealPlanExecution(unittest.TestCase):
         # 验证：状态为 needs_refinement
         self.assertEqual(result.status, "needs_refinement")
 
+    def test_reveal_actions_call_verifier(self):
+        """reveal 场景必须实际调用注入的 verifier（不得绕过）。"""
+        revealer = ControlRevealer()
+        initial_state = _make_reveal_state(control_bar_visible=False)
+        after_state = _make_reveal_state(control_bar_visible=True)
+        executor = FakeExecutor(after_state=after_state)
+        verifier = _make_success_verifier()
+        source = MockDecisionSource([ActionSpec(action_type="reveal_controls")])
+
+        result = run_action_loop(
+            source, executor, verifier,
+            initial_state=initial_state,
+            subgoal="test",
+            control_revealer=revealer,
+            max_decision_calls=10,
+            max_steps=10,
+            recovery_budget=2,
+        )
+
+        self.assertGreater(len(verifier.calls), 0,
+                          "reveal 场景必须调用注入 verifier，不得绕过")
+
 
 class TestSelectedRoleTransition(unittest.TestCase):
     """验证 selected_role 必须是状态转移。"""

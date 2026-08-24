@@ -3,13 +3,16 @@
     "invalid_action",
     "sensitive_action"
   ],
-  "error_action_injected": 14,
+  "must_reject_count": 12,
+  "must_refine_count": 2,
+  "allowed_control_count": 0,
+  "error_action_denominator": 14,
   "error_action_executed_baseline": 14,
-  "error_action_executed_harness": 4,
+  "error_action_executed_harness": 0,
   "error_action_execution_rate_baseline": 1.0,
-  "error_action_execution_rate_harness": 0.286,
-  "error_action_reduction": 0.714,
-  "guard_block_rate": 0.714,
-  "blocked_cases_with_zero_executor_calls": 10,
-  "requires_refinement_zero_executor_calls": 0
+  "error_action_execution_rate_harness": 0.0,
+  "error_action_reduction": 1.0,
+  "must_reject_zero_executor": 12,
+  "must_refine_zero_executor": 2,
+  "per_case_failures": []
 }

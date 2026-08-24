@@ -1,33 +1,39 @@
 Metric,Value
 total_scenarios,34
-outcome_matches,20
-outcome_match_rate,0.588
-executor_calls_matches,20
-executor_calls_match_rate,0.588
+outcome_matches,34
+outcome_match_rate,1.0
+executor_calls_matches,34
+executor_calls_match_rate,1.0
 
 Safety Metrics,
-guard_rejection_count,10
-zero_executor_calls_count,10
-zero_executor_coverage,1.0
+must_reject_count,12
+must_refine_count,2
+allowed_control_count,0
+must_reject_zero_executor,12
+must_refine_zero_executor,2
+must_reject_all_assertions,True
+must_refine_all_assertions,True
 
 Recovery Metrics,
-recoverable_scenario_count,4
+recoverable_executed_count,4
 recovery_success_count,4
 recovery_success_rate,1.0
-average_recovery_count,0.0
-max_recovery_count,0
+average_recovery_count,1.0
+max_recovery_count,1
 
 Reveal Metrics,
-reveal_scenario_count,4
-reveal_success_count,0
-reveal_success_rate,0.0
+reveal_plan_executed_count,4
+reveal_success_count,1
+reveal_success_rate,0.25
 
 Budget Metrics,
-budget_exhaustion_count,0
-budget_type_distribution,{}
+budget_exhaustion_count,5
+budget_type_distribution,"{'decision_calls': 1, 'atomic_action_count': 2, 'recovery_count': 1, 'timeout': 1}"
 
-Latency Metrics,
-p50_latency_ms,0.01
-p95_latency_ms,0.03
-max_latency_ms,0.07
-avg_latency_ms,0.01
+"Latency Metrics (mock-simulated, not real)",
+observe,count=50 p50=0.0 p95=0.0
+decision,count=50 p50=0.0 p95=0.0
+execute,count=34 p50=0.0 p95=0.0
+verify,count=34 p50=0.0 p95=0.0
+recovery,count=9 p50=0.0 p95=0.0
+end_to_end,count=34 p50=0.0 p95=0.0

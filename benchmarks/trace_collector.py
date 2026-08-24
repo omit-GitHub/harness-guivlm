@@ -1,22 +1,31 @@
 # -*- coding: utf-8 -*-
 """Trace Collector — 跟踪收集器。
 
-为 action_loop 提供可选的 trace collector / observer。
-记录每个阶段的耗时、Guard 拒绝详情等信息。
+为 action_loop 提供 trace observer，记录每个阶段的耗时与调用前后 remaining_budget_ms。
+所有时间来自注入的 clock（毫秒），禁止依赖真实 sleep / time.time。
 """
-import time
+import os
+import sys
 from dataclasses import dataclass, field
 from typing import Optional
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_SRC_ROOT = os.path.join(os.path.dirname(_HERE), "src")
+if _SRC_ROOT not in sys.path:
+    sys.path.insert(0, _SRC_ROOT)
+
+from harness.timing import Clock, FakeClock
 
 
 @dataclass
 class PhaseTiming:
-    """单个阶段的耗时记录。"""
+    """单个阶段的耗时记录（含调用前/后剩余 deadline budget）。"""
     phase_name: str
     start_ms: float
     end_ms: float
     duration_ms: float
-    deadline_remaining_ms: Optional[float] = None
+    deadline_remaining_before_ms: Optional[float] = None
+    deadline_remaining_after_ms: Optional[float] = None
 
 
 @dataclass
@@ -80,7 +89,8 @@ class ScenarioTrace:
                     "start_ms": pt.start_ms,
                     "end_ms": pt.end_ms,
                     "duration_ms": pt.duration_ms,
-                    "deadline_remaining_ms": pt.deadline_remaining_ms,
+                    "deadline_remaining_before_ms": pt.deadline_remaining_before_ms,
+                    "deadline_remaining_after_ms": pt.deadline_remaining_after_ms,
                 }
                 for pt in self.phase_timings
             ],
@@ -102,41 +112,48 @@ class ScenarioTrace:
 
 
 class TraceCollector:
-    """跟踪收集器。"""
+    """跟踪收集器（注入 action_loop 作为 trace_observer）。
 
-    def __init__(self, deadline_ms: int = 20000):
+    记录 observe/decision/execute/verify/recovery 各阶段的耗时，
+    并在每次 end_phase 时记录剩余 deadline budget。
+    """
+
+    def __init__(self, clock: Clock, deadline_ms: Optional[int] = None):
+        self.clock = clock
         self.deadline_ms = deadline_ms
-        self.start_time_ms = time.time() * 1000
+        self.start_ms = clock.time_ms()
         self.phase_timings = []
         self.guard_rejections = []
-        self.current_phase_start = None
+        self._phase_stack = []  # list[(phase_name, start_ms, remaining_before_ms)]
 
-    def get_deadline_remaining_ms(self) -> float:
-        """获取剩余 deadline。"""
-        elapsed = time.time() * 1000 - self.start_time_ms
-        return max(0, self.deadline_ms - elapsed)
+    def get_deadline_remaining_ms(self) -> Optional[float]:
+        """获取剩余 deadline（毫秒）。无 deadline 时返回 None。"""
+        if self.deadline_ms is None:
+            return None
+        elapsed = self.clock.time_ms() - self.start_ms
+        return max(0.0, float(self.deadline_ms) - elapsed)
 
     def start_phase(self, phase_name: str):
-        """开始一个阶段。"""
-        self.current_phase_start = time.time() * 1000
+        """开始一个阶段（支持嵌套：使用栈记录每个阶段的起止与剩余 budget）。"""
+        self._phase_stack.append(
+            (phase_name, self.clock.time_ms(), self.get_deadline_remaining_ms())
+        )
 
     def end_phase(self, phase_name: str):
-        """结束一个阶段。"""
-        if self.current_phase_start is None:
+        """结束最近开始的阶段（LIFO）。"""
+        if not self._phase_stack:
             return
+        phase_name, start_ms, remaining_before_ms = self._phase_stack.pop()
 
-        end_time = time.time() * 1000
-        duration = end_time - self.current_phase_start
-
+        end_ms = self.clock.time_ms()
         self.phase_timings.append(PhaseTiming(
             phase_name=phase_name,
-            start_ms=self.current_phase_start,
-            end_ms=end_time,
-            duration_ms=duration,
-            deadline_remaining_ms=self.get_deadline_remaining_ms(),
+            start_ms=start_ms,
+            end_ms=end_ms,
+            duration_ms=end_ms - start_ms,
+            deadline_remaining_before_ms=remaining_before_ms,
+            deadline_remaining_after_ms=self.get_deadline_remaining_ms(),
         ))
-
-        self.current_phase_start = None
 
     def record_guard_rejection(self, step_idx: int, action_type: str,
                                 error_code: str, risk_level: str,
@@ -153,23 +170,10 @@ class TraceCollector:
 
     def is_deadline_exceeded(self) -> bool:
         """检查 deadline 是否已耗尽。"""
+        if self.deadline_ms is None:
+            return False
         return self.get_deadline_remaining_ms() <= 0
 
 
-class MockClock:
-    """模拟时钟，用于测试。"""
-
-    def __init__(self, start_time: float = 0.0):
-        self.current_time = start_time
-
-    def time(self) -> float:
-        """获取当前时间（秒）。"""
-        return self.current_time
-
-    def sleep(self, seconds: float):
-        """模拟 sleep。"""
-        self.current_time += seconds
-
-    def advance(self, seconds: float):
-        """前进时间。"""
-        self.current_time += seconds
+# 向后兼容别名：MockClock 已迁移到 harness.timing.FakeClock
+MockClock = FakeClock

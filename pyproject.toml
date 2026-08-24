@@ -32,6 +32,15 @@ dev = [
     "pytest>=7.0",
     "pytest-cov>=4.0",
 ]
+# 本地 OCR（可选）：未安装时 ScreenshotObservationAdapter 降级为 OCR unavailable。
+# RapidOCR 为本地 ONNX OCR（非 VLM / 非云端 API），模型随包自带。
+ocr = [
+    "rapidocr_onnxruntime==1.2.3",
+]
+# 云端 VLM 决策（可选）：DashScope qwen-vl。未安装 / 无 key 时 VLM 决策标为失败，不伪造。
+vlm = [
+    "openai>=1.0.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/omit-GitHub/Agent-project"

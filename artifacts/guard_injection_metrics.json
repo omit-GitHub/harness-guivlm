@@ -1,0 +1,44 @@
+{
+  "category": "guard_injection",
+  "attempted": 60,
+  "valid_denominator": 60,
+  "skipped": 0,
+  "invalid_setup": 0,
+  "success": 0,
+  "blocked": 0,
+  "guard_reject": 44,
+  "total_adb_dispatch": 0,
+  "zero_dispatch_count": 60,
+  "zero_dispatch_rate": "60/60",
+  "latency_p50_ms": 1076210453.76,
+  "latency_p95_ms": 1076298874.79,
+  "sensitive_target_block_rate": {
+    "numerator": 10,
+    "denominator": 10,
+    "pct": 100.0
+  },
+  "sensitive_zero_adb_dispatch": {
+    "numerator": 10,
+    "denominator": 10
+  },
+  "error_code_exact_match_rate": {
+    "numerator": 59,
+    "denominator": 60,
+    "pct": 98.33
+  },
+  "reject_refinement_zero_adb_dispatch": {
+    "numerator": 60,
+    "denominator": 60,
+    "pct": 100.0
+  },
+  "unconfirmed_sensitive_dispatch_count": 0,
+  "app_profile": "tencent_v1",
+  "device_model": "AZ102u-10",
+  "android_version": "9",
+  "screen_size": [
+    1280,
+    800
+  ],
+  "orientation": "landscape",
+  "target_package": "com.tencent.qqlive.audiobox"
+}

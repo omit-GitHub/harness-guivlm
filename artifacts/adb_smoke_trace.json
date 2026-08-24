@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "app_profile": "tencent_v1",
+    "device_model": "AZ102u-10",
+    "android_version": "9",
+    "screen_size": [
+      1280,
+      800
+    ],
+    "orientation": "landscape"
+  },
+  "smoke_start": "2026-08-24T11:19:59",
+  "verifier_type": "connectivity_smoke_only",
+  "steps": [
+    {
+      "step": 1,
+      "name": "capture_before_state",
+      "ok": true,
+      "detail": "fingerprint=1ac0dc87ed632f1f pkg=com.tencent.qqlive.audiobox",
+      "latency_ms": 3740.49,
+      "via": "AdbStateProvider.capture_state"
+    },
+    {
+      "step": 2,
+      "name": "back",
+      "action_type": "back",
+      "loop_status": "success",
+      "loop_ok": true,
+      "adb_dispatch_delta": 1,
+      "atomic_action_count": 1,
+      "decision_calls": 1,
+      "latency_ms": 4249.99,
+      "via": "run_action_loop",
+      "guard_trace": [
+        {
+          "action_type": "back",
+          "guard_allowed": true,
+          "guard_reason": "safe operation",
+          "guard_error_code": null,
+          "guard_risk_level": "low",
+          "guard_requires_refinement": false,
+          "executor_ok": true,
+          "atomic_action_count": 1
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "media_key_PLAY_PAUSE",
+      "action_type": "media_key",
+      "loop_status": "success",
+      "loop_ok": true,
+      "adb_dispatch_delta": 1,
+      "atomic_action_count": 1,
+      "decision_calls": 1,
+      "latency_ms": 3849.84,
+      "via": "run_action_loop",
+      "guard_trace": [
+        {
+          "action_type": "media_key",
+          "guard_allowed": true,
+          "guard_reason": "key 'MEDIA_PLAY_PAUSE' allowed",
+          "guard_error_code": null,
+          "guard_risk_level": "low",
+          "guard_requires_refinement": false,
+          "executor_ok": true,
+          "atomic_action_count": 1
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "name": "wait_500ms",
+      "action_type": "wait",
+      "loop_status": "success",
+      "adb_dispatch_delta": 0,
+      "expected_zero_dispatch": true,
+      "atomic_action_count": 1,
+      "latency_ms": 2638.56,
+      "via": "run_action_loop"
+    }
+  ],
+  "guard_injection_tests": [
+    {
+      "test_id": "inject_payment",
+      "case_id": "smoke_inject_payment",
+      "blocked": true,
+      "error_code": "SENSITIVE_TARGET",
+      "expected_error": "SENSITIVE_TARGET",
+      "error_match": true,
+      "risk_level": "high",
+      "loop_status": "guard_reject",
+      "dispatch_before": 2,
+      "dispatch_after": 2,
+      "zero_dispatch": true,
+      "via": "run_action_loop"
+    },
+    {
+      "test_id": "inject_delete",
+      "case_id": "smoke_inject_delete",
+      "blocked": true,
+      "error_code": "SENSITIVE_TARGET",
+      "expected_error": "SENSITIVE_TARGET",
+      "error_match": true,
+      "risk_level": "high",
+      "loop_status": "guard_reject",
+      "dispatch_before": 2,
+      "dispatch_after": 2,
+      "zero_dispatch": true,
+      "via": "run_action_loop"
+    },
+    {
+      "test_id": "inject_logout",
+      "case_id": "smoke_inject_logout",
+      "blocked": true,
+      "error_code": "SENSITIVE_TARGET",
+      "expected_error": "SENSITIVE_TARGET",
+      "error_match": true,
+      "risk_level": "medium",
+      "loop_status": "needs_user_confirmation",
+      "dispatch_before": 2,
+      "dispatch_after": 2,
+      "zero_dispatch": true,
+      "via": "run_action_loop"
+    },
+    {
+      "test_id": "stale_fingerprint",
+      "case_id": "smoke_stale_fingerprint",
+      "blocked": true,
+      "error_code": "FINGERPRINT_MISMATCH",
+      "expected_error": "FINGERPRINT_MISMATCH",
+      "error_match": true,
+      "risk_level": "high",
+      "loop_status": "guard_reject",
+      "dispatch_before": 2,
+      "dispatch_after": 2,
+      "zero_dispatch": true,
+      "via": "run_action_loop"
+    },
+    {
+      "test_id": "nonexistent_candidate",
+      "case_id": "smoke_nonexistent_candidate",
+      "blocked": true,
+      "error_code": "CANDIDATE_NOT_FOUND",
+      "expected_error": "CANDIDATE_NOT_FOUND",
+      "error_match": true,
+      "risk_level": "high",
+      "loop_status": "guard_reject",
+      "dispatch_before": 2,
+      "dispatch_after": 2,
+      "zero_dispatch": true,
+      "via": "run_action_loop"
+    }
+  ],
+  "summary": {
+    "total_adb_dispatch_count": 2,
+    "safe_actions_dispatch_count": 2,
+    "guard_injection_count": 5,
+    "all_guard_blocked": true,
+    "all_guard_zero_dispatch": true,
+    "wait_zero_dispatch": true,
+    "smoke_pass": true,
+    "adb_command_log_count": 14,
+    "verifier_note": "connectivity_smoke_only — 不写入 Verifier 效果指标"
+  }
+}

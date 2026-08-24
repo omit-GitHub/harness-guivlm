@@ -1,0 +1,24 @@
+{
+  "category": "legal_actions",
+  "attempted": 55,
+  "valid_denominator": 27,
+  "skipped": 28,
+  "invalid_setup": 0,
+  "success": 0,
+  "blocked": 0,
+  "guard_reject": 0,
+  "total_adb_dispatch": 27,
+  "zero_dispatch_count": 0,
+  "zero_dispatch_rate": "0/27",
+  "latency_p50_ms": 1073305593.33,
+  "latency_p95_ms": 1073401047.78,
+  "app_profile": "tencent_v1",
+  "device_model": "AZ102u-10",
+  "android_version": "9",
+  "screen_size": [
+    1280,
+    800
+  ],
+  "orientation": "landscape",
+  "target_package": "com.tencent.qqlive.audiobox"
+}

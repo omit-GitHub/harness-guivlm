@@ -17,6 +17,36 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 
+# ─────────────── 可注入时钟 ───────────────
+
+class Clock:
+    """可注入时钟接口（单位：毫秒）。
+
+    run_action_loop 与 benchmark 的 mock / TraceCollector 共享同一时钟实例，
+    通过推进该时钟模拟耗时，禁止依赖真实 sleep。
+    """
+    def time_ms(self) -> float:
+        raise NotImplementedError
+
+
+class RealClock(Clock):
+    """基于 time.time() 的真实时钟（毫秒）。"""
+    def time_ms(self) -> float:
+        return time.time() * 1000.0
+
+
+class FakeClock(Clock):
+    """手动推进的模拟时钟（毫秒）。"""
+    def __init__(self, start_ms: float = 0.0):
+        self._now_ms = start_ms
+
+    def time_ms(self) -> float:
+        return self._now_ms
+
+    def advance_ms(self, ms: float):
+        self._now_ms += ms
+
+
 @dataclass
 class PhaseTimings:
     """单次任务的各阶段耗时。"""

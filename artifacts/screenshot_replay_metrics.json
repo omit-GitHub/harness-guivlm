@@ -1,0 +1,97 @@
+{
+  "total_screenshots": 103,
+  "screenshots_with_candidates": 103,
+  "screenshots_without_candidates": 0,
+  "candidate_source_distribution": {
+    "visual_candidates": 1396,
+    "ocr_candidates": 3117
+  },
+  "screenshots_source_distribution": {
+    "both_visual_and_ocr": 103,
+    "visual_only": 0,
+    "ocr_only": 0
+  },
+  "ocr_backend": {
+    "name": "RapidOCROCRBackend",
+    "python": "3.14.4",
+    "version": "1.2.3",
+    "model_source": "rapidocr_onnxruntime 自带 ONNX（PP-OCRv3 det/rec + cls），随包安装，非云端/VLM"
+  },
+  "ocr_status_distribution": {
+    "ok": 103
+  },
+  "ocr_latency": {
+    "count": 103,
+    "p50_ms": 695.66,
+    "p95_ms": 1179.46,
+    "min_ms": 277.1,
+    "max_ms": 1859.52
+  },
+  "ocr_type_distribution": {
+    "status_time": 7,
+    "status_bar": 251,
+    "text": 552,
+    "button": 1807,
+    "title": 144,
+    "nav_icon_label": 182,
+    "nav_area": 174
+  },
+  "total_replay_cases": 1339,
+  "matched_cases": 1339,
+  "all_assertions_pass": true,
+  "per_case": {
+    "bbox_bottom_out": {
+      "count": 103,
+      "matched": 103
+    },
+    "bbox_negative": {
+      "count": 103,
+      "matched": 103
+    },
+    "bbox_right_out": {
+      "count": 103,
+      "matched": 103
+    },
+    "inject_delete_risk": {
+      "count": 103,
+      "matched": 103
+    },
+    "inject_payment_risk": {
+      "count": 103,
+      "matched": 103
+    },
+    "low_clickable_likelihood": {
+      "count": 103,
+      "matched": 103
+    },
+    "low_confidence": {
+      "count": 103,
+      "matched": 103
+    },
+    "nonexistent_candidate": {
+      "count": 103,
+      "matched": 103
+    },
+    "normal_tap": {
+      "count": 103,
+      "matched": 103
+    },
+    "ocr_only_no_refine": {
+      "count": 103,
+      "matched": 103
+    },
+    "previously_failed": {
+      "count": 103,
+      "matched": 103
+    },
+    "real_ocr_only_no_refine": {
+      "count": 103,
+      "matched": 103
+    },
+    "stale_candidate_map": {
+      "count": 103,
+      "matched": 103
+    }
+  },
+  "red_box_note": "无验证红框标注集，不报告 recall"
+}

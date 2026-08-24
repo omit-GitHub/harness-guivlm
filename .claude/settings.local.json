@@ -1,8 +1,22 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(python -m unittest discover -s tests)",
+      "Bash(python benchmarks/run_benchmarks.py)",
+      "Bash(python benchmarks/run_baseline_benchmarks.py)",
+      "Bash(python benchmarks/summarize_benchmarks.py)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(python -c ' *)",
+      "Bash(python *)",
+      "Bash(echo \"summarize exit=$?\")",
+      "Bash(git --version)",
+      "Bash(git ls-remote *)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(echo \"baseline exit=$?\")",
+      "Bash(echo \"exit=$?\")",
+      "Bash(xargs wc -l)",
+      "Bash(xargs head -c 3000)"
     ]
   }
 }

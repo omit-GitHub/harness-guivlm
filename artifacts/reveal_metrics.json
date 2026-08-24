@@ -1,0 +1,26 @@
+{
+  "category": "reveal",
+  "attempted": 5,
+  "valid_denominator": 0,
+  "skipped": 0,
+  "invalid_setup": 5,
+  "success": 0,
+  "blocked": 0,
+  "guard_reject": 0,
+  "total_adb_dispatch": 0,
+  "zero_dispatch_count": 0,
+  "zero_dispatch_rate": "N/A",
+  "latency_p50_ms": null,
+  "latency_p95_ms": null,
+  "valid_reveal_denominator": 0,
+  "note": "Reveal 成功率需人工标注 after_control_bar_visible 后计算",
+  "app_profile": "tencent_v1",
+  "device_model": "AZ102u-10",
+  "android_version": "9",
+  "screen_size": [
+    1280,
+    800
+  ],
+  "orientation": "landscape",
+  "target_package": "com.tencent.qqlive.audiobox"
+}

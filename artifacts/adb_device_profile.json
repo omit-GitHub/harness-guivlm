@@ -1,0 +1,15 @@
+{
+  "app_profile": "tencent_v1",
+  "device_model": "AZ102u-10",
+  "android_version": "9",
+  "screen_size": [
+    1280,
+    800
+  ],
+  "orientation": "landscape",
+  "target_package": "com.tencent.qqlive.audiobox",
+  "target_activity": "com.tencent.qqliveaudiobox.videodetail.view.VideoDetailActivity",
+  "adb_serial": "8BCTZNRORK",
+  "probe_timestamp": "2026-08-24T14:08:49",
+  "screenshot_path": "artifacts\\device_screenshots\\probe_1787551728.png"
+}

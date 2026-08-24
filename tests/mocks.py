@@ -79,8 +79,10 @@ class FakeVlmVerifier:
     """按顺序返回预设 VerificationResult；耗尽后返回 unknown。"""
     results: list
     _index: int = field(default=0, init=False, repr=False)
+    calls: list = field(default_factory=list, init=False, repr=False)
 
     def verify(self, before: UiState, after: UiState, action: ActionSpec) -> VerificationResult:
+        self.calls.append(action)
         if self._index >= len(self.results):
             return VerificationResult(
                 verification="unknown", source="vlm",

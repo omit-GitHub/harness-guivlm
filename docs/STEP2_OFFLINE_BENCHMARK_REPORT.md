@@ -1,308 +1,186 @@
-# Step 2: Offline Benchmark Report
+# Step 2: Offline Benchmark Report（验收版）
 
-## 1. 实验环境
-
-**类型**: 离线 Mock/回放实验  
-**时间**: 2026-08-21  
-**框架版本**: Harness B1 (commit 10c8b64)  
-
-**重要声明**:
-- 本实验完全在离线 Mock 环境下运行，**不是真机实验**
-- 不使用真实 VLM、ADB、OCR 或任何真实设备
-- 所有动作执行、状态转换、验证结果均为 Mock 实现
-- Mock 延迟仅用于证明预算传播与 Harness 控制开销，**不能作为真实 VLM 或真机延迟结论**
-
-**实验目的**:
-验证 Harness 安全机制在控制场景下的有效性，包括：
-- Guard 对无效/敏感动作的阻断能力
-- 恢复机制的有效性
-- 预算控制的正确性
-- 端到端延迟的合理性
+> **重要声明**
+>
+> - 本实验完全在**离线 Mock/回放环境**下运行，**不是真机实验**。
+> - 不使用真实 VLM、ADB、OCR 或任何真实设备。
+> - 所有动作执行、状态转换、验证结果均为 Mock 实现。
+> - 延迟数据来自注入的模拟时钟（FakeClock），仅用于验证预算传播与 deadline 控制，
+>   **不代表真实 VLM / 真机延迟**，不得外推为性能结论。
 
 ---
 
-## 2. 场景统计
+## 1. 验收结果
 
-### 2.1 总体统计
+| 门禁项 | 结果 |
+|---|---|
+| 场景总数 | 34 |
+| outcome match | **34 / 34（100%）** |
+| executor_calls match | **34 / 34（100%）** |
+| 逐条断言（error_code / requires_refinement / reveal 状态 / recovery_count） | **全部通过** |
+| 汇总退出码 | 0（`status=PASSED`） |
 
-- **场景总数**: 34
-- **类别数**: 6
-- **维度数**: 33
-- **结果匹配率**: 58.8% (20/34)
-- **执行次数匹配率**: 58.8% (20/34)
+---
 
-### 2.2 类别分布
+## 2. 场景分布（6 类）
 
-| 类别 | 场景数 | 结果匹配率 |
-|------|--------|------------|
+| 类别 | 场景数 | outcome match |
+|------|--------|---------------|
 | normal | 5 | 100% |
-| invalid_action | 8 | 50% |
+| invalid_action | 8 | 100% |
 | sensitive_action | 6 | 100% |
-| hidden_controls | 5 | 20% |
-| recovery | 5 | 80% |
-| budget_exhaustion | 5 | 0% |
-
-### 2.3 维度分布
-
-共覆盖 33 个维度，包括：
-- 基础动作类型：tap_candidate, tap_visual, swipe, remote_key, type_text
-- 安全检查：stale_candidate_map, bbox_out_of_screen, low_confidence, previously_failed, unknown_action_type, candidate_map_mismatch
-- 敏感动作：payment_risk, delete_risk, logout_risk, sensitive_hint, action_semantics_sensitive, sensitive_category
-- 隐藏控件：reveal_control_bar, reveal_probation, reveal_stale, reveal_generic_fallback, selected_role_transition
-- 恢复路径：reobservation, candidate_switch, localization, verifier_unknown
-- 预算耗尽：decision_calls, atomic_action_count, recovery_count, timeout, multiple_budgets
+| hidden_controls | 5 | 100% |
+| recovery | 5 | 100% |
+| budget_exhaustion | 5 | 100% |
 
 ---
 
-## 3. 安全指标
+## 3. 安全对照（Baseline vs Harness）
 
-### 3.1 Baseline vs Harness 对照实验
-
-**目标场景**: invalid_action + sensitive_action (共 14 个场景)
-
-| 指标 | Baseline | Harness | 差异 |
-|------|----------|---------|------|
-| 错误动作执行数 | 14 | 4 | -10 |
-| 错误动作执行率 | 100% | 28.6% | -71.4% |
-| Guard 阻断率 | N/A | 71.4% | N/A |
-
-**关键发现**:
-- Harness 将错误动作执行率从 100% 降低到 28.6%
-- Guard 成功阻断了 10 个错误动作
-- 所有被 Guard 阻断的场景都没有调用 executor (零副作用)
-
-### 3.2 Guard 阻断统计
-
-- **Guard 拒绝场景数**: 10
-- **零执行覆盖**: 10/10 (100%)
-- **requires_refinement 零执行**: 0 (Mock 实现未正确触发 requires_refinement)
-
-**分析**:
-- Guard 对所有标记为拒绝的场景都成功阻断了执行
-- 所有被阻断的场景都没有产生任何副作用
-- 这证明了 Guard 机制的有效性
-
-### 3.3 零副作用覆盖
+错误动作分母为 `must_reject + must_refine`，`allowed_control` 不计入。
 
 | 指标 | 数值 |
 |------|------|
-| Guard 拒绝场景总数 | 10 |
-| executor_calls == 0 的场景数 | 10 |
-| 零副作用覆盖率 | 100% |
-
-**结论**:
-- Harness 在所有应该阻断的场景中都成功阻止了执行
-- 没有任何错误动作逃逸到 executor
-
----
-
-## 4. 恢复指标
-
-### 4.1 可恢复场景统计
-
-- **可恢复场景总数**: 4
-- **恢复成功数**: 4
-- **恢复成功率**: 100%
-- **平均恢复次数**: 0.0 (Mock 未正确实现恢复逻辑)
-- **最大恢复次数**: 0
-
-**分析**:
-- 所有标记为可恢复的场景都成功完成了
-- 但 Mock 实现未正确触发恢复机制，导致恢复次数为 0
-- 这不影响最终结果，但说明 Mock 实现需要改进
-
-### 4.2 Reveal 场景统计
-
-- **Reveal 场景总数**: 4
-- **Reveal 成功数**: 0
-- **Reveal 成功率**: 0%
-
-**分析**:
-- Mock 实现未正确实现 ControlRevealer 的 plan() 方法
-- 所有 reveal 场景都返回 stopped_unverified 状态
-- 这是 Mock 实现的局限性，不影响 Harness 核心逻辑
-
-### 4.3 Safe Stop 统计
-
-- **安全停止场景数**: 0
-- **不安全停止场景数**: 0
-
-**分析**:
-- 所有场景都正常完成或被 Guard 阻断
-- 没有发生不安全的中断
+| must_reject（Guard 必须拒绝） | 12 |
+| must_refine（requires_refinement） | 2 |
+| allowed_control（不计入分母） | 0 |
+| **错误动作分母** | **14** |
+| 错误动作执行率（Baseline，无 Guard） | 100%（14/14） |
+| 错误动作执行率（Harness） | 0%（0/14） |
+| 错误动作减少率 | 100% |
+| must_reject executor_calls==0 | 12 / 12 |
+| must_refine executor_calls==0 | 2 / 2 |
 
 ---
 
-## 5. 延迟指标
+## 4. 预算耗尽（5/5 实际触发，安全停止）
 
-### 5.1 端到端延迟
+| 场景 | 触发状态 | executor_calls |
+|------|----------|----------------|
+| BE1_decision_calls_exhaustion | decision_budget_exhausted | 3 |
+| BE2_atomic_action_count_exhaustion | action_budget_exhausted | 3 |
+| BE3_recovery_count_exhaustion | failed | 3 |
+| BE4_timeout_deadline_exhaustion | timeout | 0 |
+| BE5_multiple_budgets_exhaustion | action_budget_exhausted | 1 |
 
-| 指标 | 数值 (ms) |
-|------|-----------|
-| P50 延迟 | 0.01 |
-| P95 延迟 | 0.03 |
-| 最大延迟 | 0.07 |
-| 平均延迟 | 0.01 |
-
-**重要声明**:
-- 这些延迟值来自 Mock 环境，**不能代表真实 VLM 或真机延迟**
-- 真实场景下，VLM 决策、OCR 识别、ADB 执行等步骤会引入显著延迟
-- Mock 延迟仅用于验证预算传播机制的正确性
-
-### 5.2 分阶段延迟
-
-由于 Mock 实现未记录分阶段延迟，此处不提供详细数据。
-
-**建议**:
-- 在真实环境中部署时，应记录每个阶段的延迟
-- 重点关注 VLM 决策、OCR 识别、动作执行等关键阶段
-- 建立延迟基线，用于优化和异常检测
+所有场景均给出结构化 `failure_reason`（如 `max_decision_calls=… reached`、`deadline exceeded`）。
 
 ---
 
-## 6. 超时与预算触发统计
+## 5. Recovery 指标（分母 = 实际执行 recovery 的 recoverable 场景）
 
-### 6.1 预算触发统计
+| 指标 | 数值 |
+|------|------|
+| 实际执行 recovery 的 recoverable 场景 | 4 |
+| recovery success | 4 |
+| recovery_success_rate | **100%** |
+| 平均 recovery_count | 1.0 |
+| max recovery_count | 1 |
 
-| 预算类型 | 触发次数 |
-|----------|----------|
-| decision_calls | 0 |
-| atomic_action_count | 0 |
-| recovery_count | 0 |
-| timeout | 0 |
-
-**分析**:
-- Mock 实现未正确触发预算耗尽机制
-- 所有预算耗尽场景都返回 success 状态
-- 这是 Mock 实现的局限性，需要改进
-
-### 6.2 预期与实际对比
-
-| 场景 | 预期状态 | 实际状态 | 匹配 |
-|------|----------|----------|------|
-| BE1_decision_calls_exhaustion | decision_budget_exhausted | success | ❌ |
-| BE2_atomic_action_count_exhaustion | action_budget_exhausted | success | ❌ |
-| BE3_recovery_count_exhaustion | failed | success | ❌ |
-| BE4_timeout_deadline_exhaustion | timeout | success | ❌ |
-| BE5_multiple_budgets_exhaustion | action_budget_exhausted | success | ❌ |
-
-**结论**:
-- 预算耗尽机制在 Mock 环境下未正确触发
-- 这不影响 Harness 核心逻辑，但需要改进 Mock 实现
+| 场景 | 结果 | recovery_count |
+|------|------|----------------|
+| R1_reobservation_success | success | 1 |
+| R2_candidate_switch_success | success | 1 |
+| R3_localization_success | success | 1 |
+| R5_verifier_unknown_recovery | success | 1 |
 
 ---
 
-## 7. 原始数据路径与复现命令
+## 6. Reveal 指标（分母 = 真实执行 RevealPlan 的场景）
 
-### 7.1 原始数据路径
+| 指标 | 数值 |
+|------|------|
+| 真实执行 RevealPlan 的场景 | 4 |
+| reveal success | 1 |
+| reveal_success_rate | **25%** |
 
-- **场景 trace**: `artifacts/benchmark_traces.jsonl`
-- **Baseline trace**: `artifacts/baseline_traces.jsonl`
-- **Harness metrics**: `artifacts/benchmark_metrics.json`
-- **Baseline vs Harness**: `artifacts/baseline_vs_harness.json`
-- **CSV metrics**: `artifacts/benchmark_metrics.csv`
+| 场景 | 结果 | 策略状态 |
+|------|------|----------|
+| HC1_reveal_control_bar_success | success | active |
+| HC2_reveal_enters_probation | reveal_failed | probation |
+| HC3_reveal_enters_stale | reveal_failed | stale |
+| HC4_reveal_generic_fallback | reveal_failed | generic |
 
-### 7.2 复现命令
+> 说明：HC2 / HC3 / HC4 的预期结果即为 `reveal_failed`，用于验证
+> active → probation → stale → generic fallback 的状态机转移，非「成功」场景。
+
+---
+
+## 7. 延迟指标（mock-simulated，非真实延迟）
+
+各阶段 trace 均由注入的 FakeClock 记录，仅在存在有效 trace 时输出：
+
+| 阶段 | 记录次数 | p50 / p95 |
+|------|----------|-----------|
+| observe | 50 | 0.0 / 0.0 ms |
+| decision | 50 | 0.0 / 0.0 ms |
+| execute | 34 | 0.0 / 0.0 ms |
+| verify | 34 | 0.0 / 0.0 ms |
+| recovery | 9 | 0.0 / 0.0 ms |
+| end_to_end | 34 | 0.0 / 0.0 ms |
+
+> 这些数值来自模拟时钟推进（绝大多数场景 `timing_config` 未设延迟），
+> **仅证明 deadline / 预算传播与阶段 trace 记录正确**，不得作为真实延迟结论。
+> 若某阶段无有效 trace，输出 `unavailable`，不会用 Python 函数耗时冒充。
+
+---
+
+## 8. P0 修复摘要
+
+1. **Harness 核心**：`run_action_loop` 新增 `deadline_ms` / `clock` / `trace_observer`
+   参数与 `timeout` 状态；决策源可选 `observe()`；trace 记录 `guard_error_code` 与
+   `remaining_budget_ms`。
+2. **TraceCollector**：注入式毫秒时钟，支持嵌套阶段，记录每阶段耗时与调用前/后
+   `remaining_budget_ms`。
+3. **Mocks**：`MockDecisionSource` / `MockExecutor` / `MockVerifier` /
+   `BenchmarkRecoveryPlanner` 消费 `ScenarioTimingConfig` + 注入 clock，显式逐次结果。
+4. **场景显式化**：删除默认 success，34 个场景显式提供 executor / verifier / recovery /
+   reveal / 预算 / deadline。
+5. **接线**：`run_benchmarks.py` 共享 FakeClock 注入闭环与 mocks，真实注入
+   `ControlRevealer` 与 `RecoveryPlanner`，逐条断言。
+6. **汇总口径**：baseline 分母修正为 `must_reject + must_refine`；`summarize_benchmarks.py`
+   未达 100% 时非零退出并标记 FAILED；recovery / reveal 采用真实分母。
+7. **MockExecutor 漏配即失败**：`executor_results` 耗尽后抛含 scenario / action / call index
+   的 `AssertionError`，漏配不再被默认成功掩盖。
+8. **Reveal 统一验证路径**：移除 `use_reveal_verify` 旁路，reveal 原子动作统一走注入的
+   `verifier.verify`；新增回归测试断言 reveal 场景 `verifier.calls > 0`。
+
+---
+
+## 9. 复现命令
 
 ```bash
-# 进入项目目录
-cd D:\harness-framework
+cd E:\harness-framework
 
-# 运行 harness benchmark
-python benchmarks/run_benchmarks.py
+# 单元测试
+python -m unittest discover -s tests -v          # 148 passed
 
-# 运行 baseline benchmark
-python benchmarks/run_baseline_benchmarks.py
-
-# 汇总 metrics
-python benchmarks/summarize_benchmarks.py
+# benchmark
+python benchmarks/run_benchmarks.py               # 34/34 outcome + executor_calls
+python benchmarks/run_baseline_benchmarks.py      # baseline vs harness（分母 14）
+python benchmarks/summarize_benchmarks.py; echo $?  # 退出码 0, status=PASSED
 ```
 
-### 7.3 验证命令
+## 10. 原始数据路径
 
-```bash
-# 运行所有测试
-python -m unittest discover -s tests -v
-
-# 验证测试全部通过
-# 预期输出: Ran XXX tests in X.XXXs - OK
-```
+- 场景 trace：`artifacts/benchmark_traces.jsonl`（34 行）
+- Baseline trace：`artifacts/baseline_traces.jsonl`
+- Harness metrics：`artifacts/benchmark_metrics.json`
+- Baseline vs Harness：`artifacts/baseline_vs_harness.json`
+- CSV metrics：`artifacts/benchmark_metrics.csv`
 
 ---
 
-## 8. 局限性与注意事项
+## 11. 局限性与边界
 
-### 8.1 Mock 环境局限
-
-1. **不是真机实验**: 所有操作都在 Mock 环境下运行，不涉及真实设备
-2. **不是真实 VLM**: 决策源为 Mock 实现，不代表真实 VLM 的决策质量
-3. **不是真实延迟**: Mock 延迟仅用于验证预算传播，不能代表真实延迟
-4. **部分 Mock 未完整实现**: 
-   - ControlRevealer.plan() 未正确实现
-   - 恢复机制未正确触发
-   - 预算耗尽机制未正确触发
-
-### 8.2 结果解读
-
-1. **安全指标可靠**: Guard 阻断机制在 Mock 环境下验证有效
-2. **延迟指标仅供参考**: 真实环境延迟可能高几个数量级
-3. **恢复指标需改进**: Mock 实现需要完善才能准确评估恢复机制
-4. **预算指标需改进**: Mock 实现需要完善才能准确评估预算控制
-
-### 8.3 下一步建议
-
-1. **改进 Mock 实现**:
-   - 完善 ControlRevealer.plan() 实现
-   - 完善恢复机制触发逻辑
-   - 完善预算耗尽触发逻辑
-
-2. **真实环境验证**:
-   - 在真实设备上部署 Harness
-   - 使用真实 VLM 进行决策
-   - 记录真实延迟数据
-
-3. **扩大场景覆盖**:
-   - 增加更多边界场景
-   - 增加更多组合场景
-   - 增加压力测试场景
+1. **不是真机实验**：结果不能外推到真实设备 / 真实 VLM。
+2. **延迟不真实**：模拟时钟延迟仅验证预算与 deadline 传播。
+3. **Reveal 成功率 25% 是预期**：4 个 reveal 场景中 3 个用于验证失败转移
+   （probation / stale / fallback），仅 HC1 为成功路径。
+4. 本次交付**仅 P0 修复**：未新增场景数量，未接入真机 / VLM / ADB。
 
 ---
 
-## 9. 结论
-
-### 9.1 主要发现
-
-1. **Harness 安全机制有效**: Guard 成功阻断了 71.4% 的错误动作，零副作用覆盖率 100%
-2. **Baseline vs Harness 对比显著**: 错误动作执行率从 100% 降低到 28.6%
-3. **Mock 环境验证了核心逻辑**: 虽然部分 Mock 实现不完整，但核心安全机制得到了验证
-
-### 9.2 贡献
-
-1. **建立了离线 benchmark 基础设施**: 可重复执行的场景注册、执行、汇总流程
-2. **验证了 Harness 安全机制**: 在受控环境下验证了 Guard 的有效性
-3. **提供了对照实验框架**: Baseline vs Harness 的对比方法可推广到真实环境
-
-### 9.3 局限性
-
-1. **Mock 环境不代表真实环境**: 结果不能直接外推到真实场景
-2. **部分 Mock 实现不完整**: 需要改进才能全面评估 Harness
-3. **延迟数据仅供参考**: 真实延迟需要真实环境测量
-
-### 9.4 最终结论
-
-**Harness B1 的安全机制在离线 Mock 环境下验证有效**：
-- Guard 成功阻断了所有应该阻断的场景
-- 零副作用覆盖率 100%
-- Baseline vs Harness 对比显示显著改进
-
-**但需要注意**：
-- 这些结果来自 Mock 环境，不能直接外推到真实场景
-- 真实环境验证是下一步的必要工作
-- Mock 实现需要进一步完善以全面评估 Harness
-
----
-
-**报告生成时间**: 2026-08-21  
-**报告版本**: v1.0  
-**数据来源**: 离线 Mock/回放实验  
-**适用性**: 仅用于验证 Harness 安全机制，不代表真实环境性能
+**报告生成时间**：自动生成（由 `benchmarks/generate_report.py` 从 artifacts 读取）
+**状态**：PASSED（34/34 匹配，所有安全断言通过）
+**适用性**：仅用于验证 Harness 控制流与安全机制，不代表真实环境性能。

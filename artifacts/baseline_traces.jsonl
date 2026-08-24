@@ -1,34 +1,34 @@
-{"scenario_id": "N1_normal_tap_candidate_success", "category": "normal", "dimension": "basic_tap_candidate", "executor_calls": 1, "total_elapsed_ms": 0.01}
-{"scenario_id": "N2_normal_tap_visual_success", "category": "normal", "dimension": "basic_tap_visual", "executor_calls": 1, "total_elapsed_ms": 0.01}
-{"scenario_id": "N3_normal_swipe_success", "category": "normal", "dimension": "basic_swipe", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "N4_normal_remote_key_success", "category": "normal", "dimension": "basic_remote_key", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "N5_normal_type_text_success", "category": "normal", "dimension": "basic_type_text", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA1_stale_candidate_map", "category": "invalid_action", "dimension": "stale_candidate_map", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA2_bbox_out_of_screen", "category": "invalid_action", "dimension": "bbox_out_of_screen", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA3_low_confidence", "category": "invalid_action", "dimension": "low_confidence", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA4_low_clickable_likelihood", "category": "invalid_action", "dimension": "low_clickable_likelihood", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA5_previously_failed_candidate", "category": "invalid_action", "dimension": "previously_failed", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA6_unknown_action_type", "category": "invalid_action", "dimension": "unknown_action_type", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA7_candidate_map_package_mismatch", "category": "invalid_action", "dimension": "candidate_map_package_mismatch", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "IA8_tap_visual_fallback_disabled", "category": "invalid_action", "dimension": "tap_visual_fallback_disabled", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA1_payment_risk_action", "category": "sensitive_action", "dimension": "payment_risk", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA2_delete_risk_action", "category": "sensitive_action", "dimension": "delete_risk", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA3_logout_risk_action", "category": "sensitive_action", "dimension": "logout_risk", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA4_sensitive_hint_action", "category": "sensitive_action", "dimension": "sensitive_hint", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA5_action_semantics_sensitive", "category": "sensitive_action", "dimension": "action_semantics_sensitive", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "SA6_sensitive_category_action", "category": "sensitive_action", "dimension": "sensitive_category", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "HC1_reveal_control_bar_success", "category": "hidden_controls", "dimension": "reveal_control_bar_success", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "HC2_reveal_enters_probation", "category": "hidden_controls", "dimension": "reveal_probation", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "HC3_reveal_enters_stale", "category": "hidden_controls", "dimension": "reveal_stale", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "HC4_reveal_generic_fallback", "category": "hidden_controls", "dimension": "reveal_generic_fallback", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "HC5_selected_role_transition", "category": "hidden_controls", "dimension": "selected_role_transition", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "R1_reobservation_success", "category": "recovery", "dimension": "reobservation_success", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "R2_candidate_switch_success", "category": "recovery", "dimension": "candidate_switch_success", "executor_calls": 2, "total_elapsed_ms": 0.0}
-{"scenario_id": "R3_localization_success", "category": "recovery", "dimension": "localization_success", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "R4_reobservation_failed", "category": "recovery", "dimension": "reobservation_failed", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "R5_verifier_unknown_recovery", "category": "recovery", "dimension": "verifier_unknown_recovery", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "BE1_decision_calls_exhaustion", "category": "budget_exhaustion", "dimension": "decision_calls_exhaustion", "executor_calls": 5, "total_elapsed_ms": 0.0}
-{"scenario_id": "BE2_atomic_action_count_exhaustion", "category": "budget_exhaustion", "dimension": "atomic_action_count_exhaustion", "executor_calls": 4, "total_elapsed_ms": 0.0}
-{"scenario_id": "BE3_recovery_count_exhaustion", "category": "budget_exhaustion", "dimension": "recovery_count_exhaustion", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "BE4_timeout_deadline_exhaustion", "category": "budget_exhaustion", "dimension": "timeout_deadline_exhaustion", "executor_calls": 1, "total_elapsed_ms": 0.0}
-{"scenario_id": "BE5_multiple_budgets_exhaustion", "category": "budget_exhaustion", "dimension": "multiple_budgets_exhaustion", "executor_calls": 2, "total_elapsed_ms": 0.0}
+{"scenario_id": "N1_normal_tap_candidate_success", "category": "normal", "dimension": "basic_tap_candidate", "executor_calls": 1}
+{"scenario_id": "N2_normal_tap_visual_success", "category": "normal", "dimension": "basic_tap_visual", "executor_calls": 1}
+{"scenario_id": "N3_normal_swipe_success", "category": "normal", "dimension": "basic_swipe", "executor_calls": 1}
+{"scenario_id": "N4_normal_remote_key_success", "category": "normal", "dimension": "basic_remote_key", "executor_calls": 1}
+{"scenario_id": "N5_normal_type_text_success", "category": "normal", "dimension": "basic_type_text", "executor_calls": 1}
+{"scenario_id": "IA1_stale_candidate_map", "category": "invalid_action", "dimension": "stale_candidate_map", "executor_calls": 1}
+{"scenario_id": "IA2_bbox_out_of_screen", "category": "invalid_action", "dimension": "bbox_out_of_screen", "executor_calls": 1}
+{"scenario_id": "IA3_low_confidence", "category": "invalid_action", "dimension": "low_confidence", "executor_calls": 1}
+{"scenario_id": "IA4_low_clickable_likelihood", "category": "invalid_action", "dimension": "low_clickable_likelihood", "executor_calls": 1}
+{"scenario_id": "IA5_previously_failed_candidate", "category": "invalid_action", "dimension": "previously_failed", "executor_calls": 1}
+{"scenario_id": "IA6_unknown_action_type", "category": "invalid_action", "dimension": "unknown_action_type", "executor_calls": 1}
+{"scenario_id": "IA7_candidate_map_package_mismatch", "category": "invalid_action", "dimension": "candidate_map_package_mismatch", "executor_calls": 1}
+{"scenario_id": "IA8_tap_visual_fallback_disabled", "category": "invalid_action", "dimension": "tap_visual_fallback_disabled", "executor_calls": 1}
+{"scenario_id": "SA1_payment_risk_action", "category": "sensitive_action", "dimension": "payment_risk", "executor_calls": 1}
+{"scenario_id": "SA2_delete_risk_action", "category": "sensitive_action", "dimension": "delete_risk", "executor_calls": 1}
+{"scenario_id": "SA3_logout_risk_action", "category": "sensitive_action", "dimension": "logout_risk", "executor_calls": 1}
+{"scenario_id": "SA4_sensitive_hint_action", "category": "sensitive_action", "dimension": "sensitive_hint", "executor_calls": 1}
+{"scenario_id": "SA5_action_semantics_sensitive", "category": "sensitive_action", "dimension": "action_semantics_sensitive", "executor_calls": 1}
+{"scenario_id": "SA6_sensitive_category_action", "category": "sensitive_action", "dimension": "sensitive_category", "executor_calls": 1}
+{"scenario_id": "HC1_reveal_control_bar_success", "category": "hidden_controls", "dimension": "reveal_control_bar_success", "executor_calls": 1}
+{"scenario_id": "HC2_reveal_enters_probation", "category": "hidden_controls", "dimension": "reveal_probation", "executor_calls": 2}
+{"scenario_id": "HC3_reveal_enters_stale", "category": "hidden_controls", "dimension": "reveal_stale", "executor_calls": 3}
+{"scenario_id": "HC4_reveal_generic_fallback", "category": "hidden_controls", "dimension": "reveal_generic_fallback", "executor_calls": 1}
+{"scenario_id": "HC5_selected_role_transition", "category": "hidden_controls", "dimension": "selected_role_transition", "executor_calls": 1}
+{"scenario_id": "R1_reobservation_success", "category": "recovery", "dimension": "reobservation_success", "executor_calls": 1}
+{"scenario_id": "R2_candidate_switch_success", "category": "recovery", "dimension": "candidate_switch_success", "executor_calls": 1}
+{"scenario_id": "R3_localization_success", "category": "recovery", "dimension": "localization_success", "executor_calls": 1}
+{"scenario_id": "R4_reobservation_failed", "category": "recovery", "dimension": "reobservation_failed", "executor_calls": 2}
+{"scenario_id": "R5_verifier_unknown_recovery", "category": "recovery", "dimension": "verifier_unknown_recovery", "executor_calls": 1}
+{"scenario_id": "BE1_decision_calls_exhaustion", "category": "budget_exhaustion", "dimension": "decision_calls_exhaustion", "executor_calls": 5}
+{"scenario_id": "BE2_atomic_action_count_exhaustion", "category": "budget_exhaustion", "dimension": "atomic_action_count_exhaustion", "executor_calls": 4}
+{"scenario_id": "BE3_recovery_count_exhaustion", "category": "budget_exhaustion", "dimension": "recovery_count_exhaustion", "executor_calls": 2}
+{"scenario_id": "BE4_timeout_deadline_exhaustion", "category": "budget_exhaustion", "dimension": "timeout_deadline_exhaustion", "executor_calls": 1}
+{"scenario_id": "BE5_multiple_budgets_exhaustion", "category": "budget_exhaustion", "dimension": "multiple_budgets_exhaustion", "executor_calls": 2}
